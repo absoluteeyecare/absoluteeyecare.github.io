@@ -32,9 +32,9 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        rgba(214, 191, 164, 0.35), /* soft nude top */
-        rgba(214, 191, 164, 0.35)  /* soft nude bottom */
-      ), rgba(0, 0, 0, 0.2); /* subtle dark for readability */
+        rgba(214, 191, 164, 0.35),
+        rgba(214, 191, 164, 0.35)
+      ), rgba(0, 0, 0, 0.2);
       z-index: 0;
     }
 
@@ -129,6 +129,34 @@
         font-size: 2rem;
       }
     }
+
+    /* Insurance section styling */
+    .insurance-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .insurance-card {
+      flex: 0 1 120px;
+      text-align: center;
+    }
+
+    .insurance-card img {
+      max-width: 100px;
+      height: auto;
+      display: block;
+      margin: auto;
+      object-fit: contain;
+    }
+
+    .insurance-card p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: #2c2c2c;
+    }
   </style>
 </head>
 
@@ -160,6 +188,32 @@
     <div class="card">
       <strong>Children’s Eye Care</strong>
       <p>Gentle and thorough eye care for children at every stage of development.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Insurance We Accept</h2>
+  <div class="insurance-logos">
+    <div class="insurance-card">
+      <img src="logos/davis.png" alt="Davis Vision" />
+      <p>Davis Vision</p>
+    </div>
+    <div class="insurance-card">
+      <img src="logos/eyemed.png" alt="EyeMed" />
+      <p>EyeMed</p>
+    </div>
+    <div class="insurance-card">
+      <img src="logos/spectera.png" alt="Spectera" />
+      <p>Spectera</p>
+    </div>
+    <div class="insurance-card">
+      <img src="logos/superior.png" alt="Superior Vision" />
+      <p>Superior Vision</p>
+    </div>
+    <div class="insurance-card">
+      <img src="logos/vsp.png" alt="VSP Vision Care" />
+      <p>VSP</p>
     </div>
   </div>
 </section>
@@ -217,6 +271,7 @@
 
 </body>
 </html>
+
 
 
 
