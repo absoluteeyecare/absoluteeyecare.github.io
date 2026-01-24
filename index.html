@@ -2,115 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Absolute Eye Care | Ennis, TX</title>
 
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f4f8fb;
+      background-color: #f7f5f2;
       color: #2c2c2c;
       line-height: 1.6;
     }
 
-    header {
+    /* HERO HEADER */
+    .hero {
       position: relative;
       text-align: center;
       color: white;
-      padding: 80px 20px;
-      background: #d6bfa4; /* Nude header background */
+      padding: 110px 20px;
+      background-size: cover;
+      background-position: center;
+      animation: heroRotate 14s infinite;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .overlay-text {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: auto;
     }
 
-    header .btn {
+    @keyframes heroRotate {
+      0%   { background-image: url("phoropter-1.jpg"); }
+      50%  { background-image: url("phoropter-2.jpg"); }
+      100% { background-image: url("phoropter-1.jpg"); }
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+
+    /* BUTTONS */
+    .btn {
       display: inline-block;
-      background: #d6bfa4; /* Nude button background */
-      color: white;
-      padding: 14px 26px;
+      background: #d6bfa4;
+      color: #2c2c2c;
+      padding: 14px 28px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: background-color 0.3s ease;
+      margin-top: 20px;
     }
 
-    header .btn:hover {
-      background: #bfa38f; /* Slightly darker nude on hover */
+    .btn:hover {
+      background: #bfa38f;
     }
 
+    /* SECTIONS */
     section {
-      padding: 55px 20px;
+      padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      color: #d6bfa4; /* Nude section headings */
+      color: #bfa38f;
       margin-bottom: 20px;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
+      gap: 24px;
     }
 
     .card {
-      background: #ffffff;
+      background: white;
       padding: 26px;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    a.btn {
-      display: inline-block;
-      background: #d6bfa4;
-      color: #fff;
-      padding: 14px 26px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    a.btn:hover {
-      background: #bfa38f; /* darker nude hover */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
 
     iframe {
       width: 100%;
-      height: 650px;
+      height: 350px;
       border: none;
       border-radius: 8px;
     }
 
     footer {
-      background: #d6bfa4; /* Nude footer */
-      color: white;
+      background: #d6bfa4;
+      color: #2c2c2c;
       text-align: center;
       padding: 28px 20px;
       font-size: 0.9rem;
     }
   </style>
 </head>
+
 <body>
 
-<header>
+<header class="hero">
   <div class="overlay-text">
     <h1>Absolute Eye Care</h1>
     <p>Providing comprehensive, patient-centered optometry services to Ennis, Texas and surrounding communities.</p>
@@ -133,98 +134,68 @@
       <strong>Contact Lens Fittings</strong>
       <p>Personalized fittings focused on eye health, comfort, and clarity.</p>
     </div>
+    <div class="card">
+      <strong>Children’s Eye Care</strong>
+      <p>Gentle and thorough eye care for children at every stage of development.</p>
+    </div>
   </div>
 </section>
 
 <section id="booking">
   <h2>Book an Appointment</h2>
-  
-  <p>
-    Existing patients can schedule or manage appointments through our secure
-    online patient portal:
-  </p>
-  <a
-    class="btn"
-    href="https://www.revolutionphr.com/portal/home.htm"
-    target="_blank"
-    rel="noopener"
-  >
-    Existing Patient / Portal Login
+
+  <p>Existing patients may manage appointments through our secure patient portal:</p>
+  <a class="btn" href="https://www.revolutionphr.com/portal/home.htm" target="_blank" rel="noopener">
+    Existing Patient Portal
   </a>
 
-  <p style="margin-top: 20px;">
-    New patients can schedule their first appointment here:
-  </p>
-  <a
-    class="btn"
-    href="https://www.revolutionphr.com/portal/access/951c42c3-fc9a-4fc3-af9f-645c88cb8a8a.htm"
-    target="_blank"
-    rel="noopener"
-  >
+  <p style="margin-top: 25px;">New patients can schedule their first appointment online:</p>
+  <a class="btn" href="https://www.revolutionphr.com/portal/ext/appointmentSearch.htm" target="_blank" rel="noopener">
     New Patient Booking
   </a>
 
   <p style="font-size: 0.9rem; color: #555; margin-top: 15px;">
-    Both links open in a new tab. If you need assistance, please contact our office.
+    Appointment scheduling is handled through our HIPAA-compliant patient portal.
   </p>
 </section>
 
 <section>
   <h2>Contact Information</h2>
-
   <p>
     <strong>Absolute Eye Care</strong><br>
     700 E. Ennis Ave<br>
     Ennis, TX 75119
   </p>
-
-  <p><strong>Phone:</strong> <a href="tel:+19728764005" style="color:#d6bfa4; text-decoration:none;">(972) 876-4005</a></p>
-  <p><strong>Email:</strong> info@absoluteeyecare.org</p>
-
-  <p style="font-size: 0.9rem; color: #555;">
-    Please do not submit personal medical information through email or this website.
-    For medical questions or urgent concerns, please contact our office directly.
-  </p>
+  <p><strong>Phone:</strong> (972) 876-4005</p>
+  <p><strong>Email:</strong> info@absoluteeyecare.com</p>
 </section>
 
 <section>
   <h2>Our Location</h2>
-
-  <p>
-    Conveniently located inside Walmart Supercenter.
-  </p>
-
   <iframe
     src="https://www.google.com/maps?q=700+E+Ennis+Ave,+Ennis,+TX+75119&output=embed"
-    width="100%"
-    height="350"
-    style="border:0; border-radius:8px;"
-    allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
-
-  <p style="font-size: 0.85rem; color: #555; margin-top: 10px;">
-    Map provided for general location reference only.
-  </p>
 </section>
 
 <section>
   <h2>Privacy Notice</h2>
   <p style="font-size: 0.9rem;">
-    Absolute Eye Care respects patient privacy. This website does not collect
-    protected health information (PHI). Online appointment requests are handled
-    through secure, HIPAA-compliant third-party systems. For information regarding
-    your medical care, please contact our office directly.
+    This website does not collect protected health information (PHI).
+    Online scheduling is provided through a secure, HIPAA-compliant third-party patient portal.
+    For medical questions or urgent concerns, please contact our office directly.
   </p>
 </section>
 
 <footer>
-  <p>© 2026 Absolute Eye Care | Ennis, TX</p>
+  © 2026 Absolute Eye Care | Ennis, TX
 </footer>
 
 </body>
 </html>
+
+
 
 
 
