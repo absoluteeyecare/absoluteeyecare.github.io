@@ -19,10 +19,11 @@
       position: relative;
       text-align: center;
       color: white;
-      padding: 110px 20px;
+      padding: 110px 20px; /* desktop default */
+      background-image: url("phoropter-1.jpg"); /* fallback for mobile */
       background-size: cover;
       background-position: center;
-      animation: heroRotate 14s infinite;
+      background-repeat: no-repeat;
     }
 
     .hero::before {
@@ -38,12 +39,6 @@
       z-index: 1;
       max-width: 760px;
       margin: auto;
-    }
-
-    @keyframes heroRotate {
-      0%   { background-image: url("phoropter-1.jpg"); }
-      50%  { background-image: url("phoropter-2.jpg"); }
-      100% { background-image: url("phoropter-1.jpg"); }
     }
 
     h1 {
@@ -105,6 +100,30 @@
       text-align: center;
       padding: 28px 20px;
       font-size: 0.9rem;
+    }
+
+    /* Desktop-only rotating header */
+    @media (min-width: 768px) {
+      .hero {
+        animation: heroRotate 14s infinite;
+      }
+    }
+
+    @keyframes heroRotate {
+      0%   { background-image: url("phoropter-1.jpg"); }
+      50%  { background-image: url("phoropter-2.jpg"); }
+      100% { background-image: url("phoropter-1.jpg"); }
+    }
+
+    /* Mobile header padding */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 80px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -194,6 +213,8 @@
 
 </body>
 </html>
+
+
 
 
 
