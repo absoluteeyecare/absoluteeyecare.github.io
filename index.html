@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Absolute Eye Care | Ennis, TX</title>
 
   <style>
@@ -15,24 +15,41 @@
     }
 
     header {
-      background: #0b5ea8;
-      color: #fff;
-      padding: 55px 20px;
+      position: relative;
       text-align: center;
+      color: white;
+      padding: 0; /* Remove original padding for image header */
+    }
+
+    header img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      filter: brightness(0.65);
+      display: block;
+    }
+
+    header .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 20px;
+      max-width: 720px;
+      width: 100%;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
     header p {
-      max-width: 720px;
-      margin: auto;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
 
-    .btn {
+    header .btn {
       display: inline-block;
       background: #0b5ea8;
       color: #fff;
@@ -40,10 +57,10 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 20px;
+      transition: background-color 0.3s ease;
     }
 
-    .btn:hover {
+    header .btn:hover {
       background: #094b86;
     }
 
@@ -69,6 +86,27 @@
       padding: 26px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    a.btn {
+      display: inline-block;
+      background: #0b5ea8;
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.btn:hover {
+      background: #094b86;
     }
 
     iframe {
@@ -90,9 +128,12 @@
 <body>
 
 <header>
-  <h1>Absolute Eye Care</h1>
-  <p>Providing comprehensive, patient-centered optometry services to Ennis, Texas and surrounding communities.</p>
-  <a href="#booking" class="btn">Book an Appointment</a>
+  <img src="e2112e4f-55e3-4b27-8ff4-a8f22fcfac77.png" alt="Glasses focusing on eye chart" />
+  <div class="overlay-text">
+    <h1>Absolute Eye Care</h1>
+    <p>Providing comprehensive, patient-centered optometry services to Ennis, Texas and surrounding communities.</p>
+    <a href="#booking" class="btn">Book an Appointment</a>
+  </div>
 </header>
 
 <section>
@@ -159,7 +200,7 @@
     Ennis, TX 75119
   </p>
 
-  <p><strong>Phone:</strong> (972) 876-4005</p>
+  <p><strong>Phone:</strong> <a href="tel:+19728764005" style="color:#0b5ea8; text-decoration:none;">(972) 876-4005</a></p>
   <p><strong>Email:</strong> info@absoluteeyecare.com</p>
 
   <p style="font-size: 0.9rem; color: #555;">
@@ -184,6 +225,8 @@
 
 </body>
 </html>
+
+
 
 
 
