@@ -30,26 +30,6 @@
       margin: auto;
     }
 
-    /* Header */
-    header {
-      position: relative;
-      background-color: #fdf6f0;
-      color: #2c2c2c;
-      text-align: center;
-      padding: 30px 20px; /* slightly smaller padding for desktop */
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      max-width: 720px;
-      margin: auto;
-      font-size: 1rem;
-    }
-
     .btn {
       display: inline-block;
       background: #c49e86; /* nude button */
@@ -64,23 +44,38 @@
       background: #b5836a;
     }
 
-    /* Hero Image */
+    /* Hero */
     .hero {
-      width: 100%;
-      height: 300px;
-      border-radius: 8px;
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 100px 20px; /* full hero height */
       background-size: cover;
       background-position: center;
-      margin: 20px auto;
-      animation: fadeHero 10s infinite;
+      background-repeat: no-repeat;
+      animation: heroRotate 12s infinite;
     }
 
-    @keyframes fadeHero {
-      0% { background-image: url('images/phoropter-1.jpg'); opacity: 1; }
-      45% { background-image: url('images/phoropter-1.jpg'); opacity: 1; }
-      50% { background-image: url('images/phoropter-2.jpg'); opacity: 0; }
-      55% { background-image: url('images/phoropter-2.jpg'); opacity: 1; }
-      100% { background-image: url('images/phoropter-1.jpg'); opacity: 1; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+      border-radius: 8px;
+    }
+
+    .overlay-text {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    @keyframes heroRotate {
+      0% { background-image: url('images/phoropter-1.jpg'); }
+      50% { background-image: url('images/phoropter-2.jpg'); }
+      100% { background-image: url('images/phoropter-1.jpg'); }
     }
 
     /* Services Section */
@@ -95,11 +90,6 @@
       padding: 22px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    /* Booking Buttons */
-    #booking .btn {
-      margin-bottom: 12px;
     }
 
     /* Google Map iframe */
@@ -158,32 +148,23 @@
 
     /* Responsive tweaks for mobile */
     @media (max-width: 600px) {
-      header {
-        padding: 20px 15px; /* smaller padding for mobile */
+      .hero {
+        padding: 60px 15px;
+        animation: none;
+        background-image: url('images/phoropter-1.jpg');
       }
 
-      header h1 {
-        font-size: 1.4rem;
+      section {
+        padding: 30px 15px;
       }
 
-      header p {
-        font-size: 0.9rem;
+      .services {
+        gap: 15px;
       }
 
       .btn {
         padding: 10px 18px;
         font-size: 0.9rem;
-      }
-
-      /* Mobile: static hero */
-      .hero {
-        height: 180px;
-        animation: none;
-        background-image: url('images/phoropter-1.jpg');
-      }
-
-      .services {
-        gap: 15px;
       }
     }
   </style>
@@ -191,12 +172,14 @@
 <body>
 
 <header>
-  <h1>Absolute Eye Care</h1>
-  <p>Comprehensive, patient-centered optometry services in Ennis, Texas.</p>
-  <a href="#booking" class="btn">Book an Appointment</a>
-
-  <!-- Hero Image -->
-  <div class="hero"></div>
+  <!-- Hero Section with Overlay Text -->
+  <div class="hero">
+    <div class="overlay-text">
+      <h1>Absolute Eye Care</h1>
+      <p>Comprehensive, patient-centered optometry services in Ennis, Texas.</p>
+      <a href="#booking" class="btn">Book an Appointment</a>
+    </div>
+  </div>
 </header>
 
 <section>
@@ -302,6 +285,8 @@
 
 </body>
 </html>
+
+
 
 
 
