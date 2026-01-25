@@ -6,17 +6,33 @@
   <title>Absolute Eye Care | Ennis, TX</title>
 
   <style>
+    /* =========================
+       Grayscale Theme Variables
+    ========================== */
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --text-main: #2e2e2e;
+      --text-muted: #6b6b6b;
+      --primary: #3b3b3b;
+      --primary-hover: #262626;
+      --border-soft: #dddddd;
+    }
+
     /* Base Styles */
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #fdf6f0; /* nude background */
-      color: #2c2c2c;
+      background-color: var(--bg-main);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
+    h1, h2 {
+      color: var(--primary);
+    }
+
     h2 {
-      color: #c49e86; /* nude accent */
       margin-bottom: 20px;
     }
 
@@ -30,18 +46,20 @@
       margin: auto;
     }
 
+    /* Buttons */
     .btn {
       display: inline-block;
-      background: #c49e86; /* nude button */
-      color: #fff;
+      background: var(--primary);
+      color: #ffffff;
       padding: 12px 24px;
       border-radius: 6px;
       font-weight: 600;
       margin-top: 16px;
+      transition: background 0.2s ease;
     }
 
     .btn:hover {
-      background: #b5836a;
+      background: var(--primary-hover);
     }
 
     /* Hero */
@@ -49,18 +67,21 @@
       position: relative;
       text-align: center;
       color: white;
-      padding: 100px 20px; /* full hero height */
+      padding: 100px 20px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       animation: heroRotate 12s infinite;
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 40px auto;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       z-index: 0;
       border-radius: 8px;
     }
@@ -78,7 +99,7 @@
       100% { background-image: url('images/phoropter-1.jpg'); }
     }
 
-    /* Services Section */
+    /* Services */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -86,13 +107,13 @@
     }
 
     .card {
-      background: #ffffff;
+      background: var(--bg-card);
       padding: 22px;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
-    /* Google Map iframe */
+    /* Map */
     iframe {
       width: 100%;
       height: 450px;
@@ -134,19 +155,19 @@
     .insurance-card p {
       margin-top: 6px;
       font-size: 0.9rem;
-      color: #2c2c2c;
+      color: var(--text-muted);
     }
 
     /* Footer */
     footer {
-      background: #c49e86;
+      background: var(--primary);
       color: white;
       text-align: center;
       padding: 28px 20px;
       font-size: 0.9rem;
     }
 
-    /* Responsive tweaks for mobile */
+    /* Mobile */
     @media (max-width: 600px) {
       .hero {
         padding: 60px 15px;
@@ -158,10 +179,6 @@
         padding: 30px 15px;
       }
 
-      .services {
-        gap: 15px;
-      }
-
       .btn {
         padding: 10px 18px;
         font-size: 0.9rem;
@@ -169,10 +186,10 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <!-- Hero Section with Overlay Text -->
   <div class="hero">
     <div class="overlay-text">
       <h1>Absolute Eye Care</h1>
@@ -204,59 +221,54 @@
   <h2>Book an Appointment</h2>
 
   <p>Existing patients can schedule or manage appointments through our secure online portal:</p>
-  <a class="btn" href="https://www.revolutionphr.com/portal/home.htm" target="_blank" rel="noopener">Existing Patient / Portal Login</a>
+  <a class="btn" href="https://www.revolutionphr.com/portal/home.htm" target="_blank" rel="noopener">
+    Existing Patient / Portal Login
+  </a>
 
   <p style="margin-top: 20px;">New patients can schedule their first appointment here:</p>
-  <a class="btn" href="https://www.revolutionphr.com/portal/access/951c42c3-fc9a-4fc3-af9f-645c88cb8a8a.htm" target="_blank" rel="noopener">New Patient Booking</a>
+  <a class="btn" href="https://www.revolutionphr.com/portal/access/951c42c3-fc9a-4fc3-af9f-645c88cb8a8a.htm" target="_blank" rel="noopener">
+    New Patient Booking
+  </a>
 
-  <p style="font-size: 0.9rem; color: #555; margin-top: 15px;">
+  <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">
     Both links open in a new tab. If you need assistance, call our office.
   </p>
 </section>
 
 <section>
   <h2>Contact Information</h2>
-  <p><strong>Absolute Eye Care</strong><br>700 E. Ennis Ave<br>Ennis, TX 75119</p>
+  <p><strong>Absolute Eye Care</strong><br>
+     700 E. Ennis Ave<br>
+     Ennis, TX 75119</p>
+
   <p><strong>Phone:</strong> (972) 876-4005</p>
   <p><strong>Email:</strong> info@absoluteeyecare.org</p>
 
   <h2>Location</h2>
   <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.2500162087167!2d-96.62394211192571!3d32.331997034297736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864edbe5629dfc0f%3A0xec389c9c462efab9!2sAbsolute%20Eye%20Care!5e0!3m2!1sen!2sus!4v1769305114286!5m2!1sen!2sus"
-  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.2500162087167!2d-96.62394211192571!3d32.331997034297736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864edbe5629dfc0f%3A0xec389c9c462efab9!2sAbsolute%20Eye%20Care!5e0!3m2!1sen!2sus!4v1769305114286!5m2!1sen!2sus"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
   </iframe>
-
 </section>
 
 <section>
   <h2>Insurance We Accept</h2>
   <div class="insurance-logos" id="insurance-logos">
-    <div class="insurance-card">
-      <img src="logos/davis.png" alt="Davis Vision" />
-    </div>
-    <div class="insurance-card">
-      <img src="logos/eyemed.png" alt="EyeMed" />
-    </div>
-    <div class="insurance-card">
-      <img src="logos/superior.png" alt="Superior Vision" />
-    </div>
-    <div class="insurance-card">
-      <img src="logos/vsp.png" alt="VSP" />
-    </div>
-    <div class="insurance-card">
-      <img src="logos/spectera.png" alt="Spectera" />
-    </div>
+    <div class="insurance-card"><img src="logos/davis.png" alt="Davis Vision"></div>
+    <div class="insurance-card"><img src="logos/eyemed.png" alt="EyeMed"></div>
+    <div class="insurance-card"><img src="logos/superior.png" alt="Superior Vision"></div>
+    <div class="insurance-card"><img src="logos/vsp.png" alt="VSP"></div>
+    <div class="insurance-card"><img src="logos/spectera.png" alt="Spectera"></div>
   </div>
 </section>
 
 <section>
   <h2>Privacy Notice</h2>
-  <p style="font-size: 0.9rem;">
+  <p style="font-size: 0.9rem; color: var(--text-muted);">
     Absolute Eye Care respects patient privacy. This website does not collect
     protected health information (PHI). Online appointment requests are handled
-    through secure, HIPAA-compliant third-party systems. For information regarding
-    your medical care, please contact our office directly.
+    through secure, HIPAA-compliant third-party systems.
   </p>
 </section>
 
@@ -265,7 +277,6 @@
 </footer>
 
 <script>
-  // Fade-in insurance logos on scroll
   const insuranceSection = document.getElementById('insurance-logos');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -281,6 +292,7 @@
 
 </body>
 </html>
+
 
 
 
